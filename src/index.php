@@ -19,6 +19,11 @@
                 <h2>Congratulations</h2>
                 <p>Your PHP application is now running on a container in Amazon ECS.</p>
                 <p>The container is running PHP version <?php echo phpversion(); ?>.</p>
+                <?php echo 'HostName: ' . gethostname()."<br>";?>
+                <?php echo 'IPAddress: '.$_SERVER['SERVER_ADDR']."<br>";?>
+                <?php echo 'Port: '.$_SERVER['SERVER_PORT']."<br>";?>
+                <p> </p>
+                <?php echo 'YourIPAddress: '.$_SERVER['REMOTE_ADDR']."<br>";?>
                 <?php
                         $myfile = fopen("/var/www/my-vol/date", "r") or die("");
                         echo fread($myfile,filesize("/var/www/my-vol/date"));
